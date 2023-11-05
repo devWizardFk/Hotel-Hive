@@ -1,0 +1,52 @@
+<%- layout('/layouts/boilerplate') %>
+
+<div class="row">
+    <h1 class="text-center">New Hotel</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/hotels" method="post" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="name">Hotel Name</label>
+                <input class="form-control" required type="text" name="hotel[name]" id="name">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a valid hotel name!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Upload image(s)</label>
+                <input class="form-control"  type="file" name="hotel[image]" id="image" multiple>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="state">Location</label>
+                <input class="form-control" required type="text" name="hotel[location]" id="location" placeholder="City, State">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Price Per Night</label>
+                <div class="input-group">
+                    <span class="input-group-text">₹</span>
+                    <input type="number" required class="form-control" id="price" name="hotel[price]" placeholder="10000">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="desc">Description</label>
+                <textarea class="form-control" required type="text" name="hotel[desc]" id="desc" ></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Hotel</button>
+            </div>
+        </form>
+    </div>
+    <a href="/hotels">Go Back</a>
+</div>
+
